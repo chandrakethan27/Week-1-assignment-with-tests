@@ -4,5 +4,12 @@
  */
 
 function sleep (seconds) {
-
+return new Promise (resolve => (setTimeout(resolve, seconds*1000)))
 }
+
+function print()
+{
+    console.log("Promise halting done")
+}
+let sol = sleep(3)
+sol.then(print)

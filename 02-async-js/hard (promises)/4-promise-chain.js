@@ -6,17 +6,19 @@
  */
 
 function waitOneSecond() {
-
+    return new Promise( resolve => (setTimeout(waitTwoSecond, 1000)))
 }
 
 function waitTwoSecond() {
-
+    return new Promise(resolve => (setTimeout(waitThreeSecond, 2000)))
 }
 
 function waitThreeSecond() {
-
+    return new Promise(resolve =>(setTimeout(calculateTime, 3000)))
 }
 
 function calculateTime() {
-
+    return console.log(("all promises recieved"))
 }
+
+waitOneSecond()

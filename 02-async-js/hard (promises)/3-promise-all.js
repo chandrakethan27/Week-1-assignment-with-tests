@@ -7,16 +7,26 @@
 
 function waitOneSecond() {
 
+    return new Promise( resolve => (setTimeout(resolve, 1000)));
+
 }
 
 function waitTwoSecond() {
-
+    return new Promise( resolve => (setTimeout(resolve, 2000)));
 }
 
 function waitThreeSecond() {
-
+    return new Promise(resolve => (setTimeout(resolve, 3000)));
 }
 
 function calculateTime() {
-
+    let a = waitOneSecond();
+    a.then(print)
+    let b = waitTwoSecond();
+    b.then(print)
+    let c = waitThreeSecond();
+    c.then(print)
 }
+print = () =>{console.log("Promise recieved")}
+
+calculateTime()
